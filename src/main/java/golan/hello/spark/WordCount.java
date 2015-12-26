@@ -25,28 +25,13 @@ import java.util.Arrays;
 public class WordCount {
 
   private static final FlatMapFunction<String, String> WORDS_EXTRACTOR =
-      new FlatMapFunction<String, String>() {
-        @Override
-        public Iterable<String> call(String s) throws Exception {
-          return Arrays.asList(s.split(" "));
-        }
-      };
+          (FlatMapFunction<String, String>) s -> Arrays.asList(s.split(" "));
 
   private static final PairFunction<String, String, Integer> WORDS_MAPPER =
-      new PairFunction<String, String, Integer>() {
-        @Override
-        public Tuple2<String, Integer> call(String s) throws Exception {
-          return new Tuple2<String, Integer>(s, 1);
-        }
-      };
+          (PairFunction<String, String, Integer>) s -> new Tuple2<>(s, 1);
 
   private static final Function2<Integer, Integer, Integer> WORDS_REDUCER =
-      new Function2<Integer, Integer, Integer>() {
-        @Override
-        public Integer call(Integer a, Integer b) throws Exception {
-          return a + b;
-        }
-      };
+          (Function2<Integer, Integer, Integer>) (a, b) -> a + b;
 
   public static void main(String[] args) {
     if (args.length < 1) {

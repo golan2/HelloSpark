@@ -19,41 +19,25 @@
       </profile>
       <profile default="false" name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="HelloSpark" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="HelloSpark" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
   <component name="CopyrightManager" default="" />
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
-  </component>
-  <component name="InspectionProjectProfileManager">
-    <profiles>
-      <profile version="1.0" is_locked="false">
-        <option name="myName" value="Project Default" />
-        <option name="myLocal" value="false" />
-        <inspection_tool class="AntDuplicateImportedTargetsInspection" enabled="false" level="WARNING" enabled_by_default="false" />
-        <inspection_tool class="ConstantConditions" enabled="false" level="WARNING" enabled_by_default="false">
-          <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
-          <option name="DONT_REPORT_TRUE_ASSERT_STATEMENTS" value="false" />
-        </inspection_tool>
-        <inspection_tool class="UnusedCatchParameter" enabled="true" level="WARNING" enabled_by_default="true">
-          <option name="m_ignoreCatchBlocksWithComments" value="false" />
-          <option name="m_ignoreTestCases" value="false" />
-        </inspection_tool>
-        <inspection_tool class="UnusedImport" enabled="true" level="WARNING" enabled_by_default="true" />
-      </profile>
-    </profiles>
-    <option name="PROJECT_PROFILE" value="Project Default" />
-    <option name="USE_PROJECT_PROFILE" value="true" />
-    <version value="1.0" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -67,7 +51,7 @@
       <module fileurl="file://$PROJECT_DIR$/HelloSpark.iml" filepath="$PROJECT_DIR$/HelloSpark.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" assert-keyword="true" jdk-15="true" project-jdk-name="1.8 _45" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://C:/intellij_out" />
   </component>
   <component name="VcsDirectoryMappings">
