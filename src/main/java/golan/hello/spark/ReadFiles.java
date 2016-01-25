@@ -1,7 +1,6 @@
 package golan.hello.spark;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
@@ -11,16 +10,13 @@ import java.io.IOException;
 /**
  * Created by golaniz on 20/01/2016.
  */
-public class ReadFiles {
-
-    public static final String TEXT_OUTPUT_FOLDER = WordCount.INPUT_FILE + ".saveAsTextFile.utxt";
+public class ReadFiles extends AbsSpark {
 
     public static void main(String[] args) throws InterruptedException {
-        SparkConf sparkConf = new SparkConf().setAppName("org.sparkexample.WordCount").setMaster("local");
-        JavaSparkContext context = new JavaSparkContext(sparkConf);
-        JavaRDD<String> file = context.textFile(WordCount.INPUT_FILE);
-        JavaRDD<String> filtered = file.filter(WordCount.D_FILTER_FILE);
-        JavaRDD<StocksVal> stocks = filtered.map(WordCount.D_READ_2_OBJECTS);
+        JavaSparkContext context = getJavaSparkContext("ReadFiles");
+        JavaRDD<String> file = context.textFile(INPUT_FILE);
+        JavaRDD<String> filtered = file.filter(F_FILTER_FILE);
+        JavaRDD<StocksVal> stocks = filtered.map(F_READ_2_OBJECTS);
         try {
             FileUtils.deleteDirectory(new File(TEXT_OUTPUT_FOLDER));
         } catch (IOException e) {
@@ -57,6 +53,6 @@ public class ReadFiles {
 
         System.out.println("context.stop =============================");
         context.stop();
-
     }
+
 }

@@ -18,7 +18,7 @@ public class Connect2Master {
         System.out.println("~~sparkConf=" + sparkConf);
         JavaSparkContext context = new JavaSparkContext(sparkConf);
         System.out.println("~~context=" + context);
-        JavaRDD<String> file = context.textFile(WordCount.INPUT_FILE);
+        JavaRDD<String> file = context.textFile(AbsSpark.INPUT_FILE);
         System.out.println("~~file_count=" + file.count());
     }
 }

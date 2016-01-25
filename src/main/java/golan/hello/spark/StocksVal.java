@@ -78,6 +78,10 @@ class StocksVal implements Serializable {
     }
   }
 
+  public static boolean isFirstDayOfMonth(String stockAsString) {
+    return new StocksVal(stockAsString).getDay()==1;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
