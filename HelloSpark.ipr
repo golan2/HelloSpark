@@ -859,6 +859,7 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-common/2.2.0/hadoop-common-2.2.0-sources.jar!/" />
+        <root url="jar://C:/classpath/hadoop/hadoop-common-2.2.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.hadoop:hadoop-hdfs:2.2.0">
@@ -1388,17 +1389,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.slf4j:slf4j-log4j12:1.7.10">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-log4j12/1.7.10/slf4j-log4j12-1.7.10.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-log4j12/1.7.10/slf4j-log4j12-1.7.10-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-log4j12/1.7.10/slf4j-log4j12-1.7.10-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.spark-project.spark:unused:1.0.0">

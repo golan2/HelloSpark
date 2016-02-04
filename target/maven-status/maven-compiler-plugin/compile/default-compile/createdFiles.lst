@@ -1,4 +1,11 @@
-golan\hello\spark\WordCount$1.class
-golan\hello\spark\WordCount$2.class
+golan\hello\spark\Connect2Master.class
+golan\hello\spark\SimpleRead.class
+jaceklaskowski\gitbooks\io\TestPairRDDFunctions.class
+jaceklaskowski\gitbooks\io\TakeMultipleJobs.class
 golan\hello\spark\WordCount.class
+golan\hello\spark\ReadFiles$1.class
+golan\hello\spark\ReadFiles$Ex.class
+golan\hello\spark\StocksVal.class
+golan\hello\spark\AbsSpark.class
+golan\hello\spark\ReadFiles$R.class
 golan\hello\spark\ReadFiles.class

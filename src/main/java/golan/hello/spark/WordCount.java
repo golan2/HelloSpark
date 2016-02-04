@@ -1,8 +1,6 @@
-
 package golan.hello.spark;
 
 
-import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.FlatMapFunction;
@@ -47,16 +45,18 @@ public class WordCount extends AbsSpark {
   private static void run() {
     System.out.println("-------------------------------------- run --------------------------------------");
     System.out.println("Before...");
-    JavaSparkContext context = getJavaSparkContext("WordCount");
+    JavaSparkContext context = getJavaSparkContext(WordCount.class.getSimpleName());
     System.out.println("context: " + context);
 
+//    JavaRDD<String> file = context.textFile("hdfs://16.59.58.47:9000/user/hadoop/ebooks/gutenberg_input.txt");
     JavaRDD<String> file = context.textFile(AbsSpark.INPUT_FILE);
-    System.out.println("F_FILTER_FILE...");
-    file = file.filter(AbsSpark.F_FILTER_FILE);
-    System.out.println("F_READ_2_OBJECTS...");
-    JavaRDD<StocksVal> stocks = file.map(AbsSpark.F_READ_2_OBJECTS);
-    System.out.println("foreach...");
-    stocks.foreach(stocksVal -> System.out.println(stocksVal.date+"#v1+v2="+(stocksVal.val1+stocksVal.val2)/2));
+    file.foreach( x-> System.out.println(x) );
+//    System.out.println("F_FILTER_FILE...");
+//    file = file.filter(AbsSpark.F_FILTER_FILE);
+//    System.out.println("F_READ_2_OBJECTS...");
+//    JavaRDD<StocksVal> stocks = file.map(AbsSpark.F_READ_2_OBJECTS);
+//    System.out.println("foreach...");
+//    stocks.foreach(stocksVal -> System.out.println(stocksVal.date+"#v1+v2="+(stocksVal.val1+stocksVal.val2)/2));
   }
 
 

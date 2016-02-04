@@ -19,7 +19,7 @@ public class AbsSpark {
     public static final Function<String, StocksVal> F_READ_2_OBJECTS = StocksVal::new;
 
     protected static JavaSparkContext getJavaSparkContext(String appName) {
-        SparkConf sparkConf = new SparkConf().setAppName(appName).setMaster("local");
+        SparkConf sparkConf = new SparkConf().setAppName(appName).setMaster("spark://myd-vm22661.hpswlabs.adapps.hp.com:7077");
         return new JavaSparkContext(sparkConf);
     }
 }

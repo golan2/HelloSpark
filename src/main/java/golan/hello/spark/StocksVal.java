@@ -42,7 +42,7 @@ class StocksVal implements Serializable {
 
   @Override
   public String toString() {
-    System.out.printf("["+id+"]");
+    System.out.println("["+id+"]");
     return "StocksVal{" +
             "id='" + id + '\'' +
             ", date='" + date + '\'' +
