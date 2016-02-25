@@ -1,5 +1,6 @@
-package golan.hello.spark;
+package golan.hello.spark.cluster;
 
+import golan.hello.spark.core.AbsSpark;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;

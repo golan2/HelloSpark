@@ -1,4 +1,4 @@
-package golan.hello.spark;
+package golan.hello.spark.core;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.spark.api.java.JavaRDD;
@@ -55,7 +55,7 @@ public class ReadFiles extends AbsSpark {
                 long after = System.nanoTime();
                 System.out.println("Done! ["+(after-before)/1000000000+"sec] ==> " + context.getConf().toDebugString());
 
-                JavaRDD<String> stringJavaRDD = context.textFile("hdfs://myd-vm22661.hpswlabs.adapps.hp.com.hpswlabs.adapps.hp.com:8020/user/hadoop/ebooks/gutenberg_input.txt");
+                JavaRDD<String> stringJavaRDD = context.textFile("hdfs://myd-vm22661.hpswlabs.adapps.hp.com:8020/user/hadoop/ebooks/gutenberg_input.txt");
                 stringJavaRDD.collect().forEach(System.out::print);
 
 

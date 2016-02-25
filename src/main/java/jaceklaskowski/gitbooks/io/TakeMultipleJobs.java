@@ -1,6 +1,6 @@
 package jaceklaskowski.gitbooks.io;
 
-import golan.hello.spark.AbsSpark;
+import golan.hello.spark.core.AbsSpark;
 import org.apache.spark.Partition;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;

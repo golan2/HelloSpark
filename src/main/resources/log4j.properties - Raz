@@ -5,16 +5,13 @@
 log4j.rootLogger=WARN, fileout, out
 
 
-log4j.appender.fileout=org.apache.log4j.RollingFileAppender
-log4j.appender.fileout.File=C:/log/spark_intellij.log
-log4j.appender.fileout.MaxFileSize=4096KB
-log4j.appender.fileout.MaxBackupIndex=5
+log4j.appender.fileout=org.apache.log4j.ConsoleAppender
 log4j.appender.fileout.layout=org.apache.log4j.PatternLayout
 log4j.appender.fileout.layout.conversionPattern=%d{ABSOLUTE} %5p %c{1},%t:%L - %m%n
 
 
 # uncomment the following line to turn on ActiveMQ debugging
-log4j.logger.org.apache=WARN
+log4j.logger.org.apache=INFO
 
 # CONSOLE appender not used by default
 log4j.appender.out=org.apache.log4j.ConsoleAppender

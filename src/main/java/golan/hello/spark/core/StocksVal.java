@@ -1,4 +1,4 @@
-package golan.hello.spark;
+package golan.hello.spark.core;
 
 import java.io.Serializable;
 
