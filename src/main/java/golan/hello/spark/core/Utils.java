@@ -2,6 +2,7 @@ package golan.hello.spark.core;
 
 import org.apache.commons.cli.*;
 
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -20,5 +21,13 @@ public class Utils {
     private static String getCurrentDateAndTime() {
         calendar.setTimeInMillis(System.currentTimeMillis());
         return sdf.format(calendar.getTime());
+    }
+
+    public static String findFileInClasspath(String filename) {
+        URL url = ReadFiles.class.getClassLoader().getResource(filename);
+        if (url==null) {
+            throw new RuntimeException("Can't find file: " + filename);
+        }
+        return url.getPath();
     }
 }

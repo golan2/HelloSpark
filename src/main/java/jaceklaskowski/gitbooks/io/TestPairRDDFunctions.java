@@ -1,10 +1,12 @@
 package jaceklaskowski.gitbooks.io;
 
 import golan.hello.spark.core.AbsSpark;
+import golan.hello.spark.core.Utils;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
+import org.apache.spark.sql.catalyst.expressions.Abs;
 import scala.Tuple2;
 
 import java.util.Arrays;
@@ -25,7 +27,7 @@ public class TestPairRDDFunctions extends AbsSpark {
         //For each line we have these values: {TEAM, F_NAME, L_NAME}
 
         JavaSparkContext context = getJavaSparkContext("TestPairRDDFunctions");
-        JavaRDD<String> file = context.textFile(INPUT_FOLDER + "\\PairRDDFunctions.txt").cache();
+        JavaRDD<String> file = context.textFile(Utils.findFileInClasspath(AbsSpark.STOCKS_FILE)).cache();
 
         JavaRDD<String[]> lines = file.map(F_SPLIT_TRIM);
         JavaPairRDD<String, Iterable<String[]>> groupByTeam = lines.groupBy(x -> x[0]);

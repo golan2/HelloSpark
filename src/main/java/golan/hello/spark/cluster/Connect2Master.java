@@ -1,9 +1,11 @@
 package golan.hello.spark.cluster;
 
 import golan.hello.spark.core.AbsSpark;
+import golan.hello.spark.core.Utils;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.sql.catalyst.expressions.Abs;
 
 /**
  * Created by golaniz on 21/01/2016.
@@ -19,7 +21,7 @@ public class Connect2Master {
         System.out.println("~~sparkConf=" + sparkConf);
         JavaSparkContext context = new JavaSparkContext(sparkConf);
         System.out.println("~~context=" + context);
-        JavaRDD<String> file = context.textFile(AbsSpark.INPUT_FILE);
+        JavaRDD<String> file = context.textFile(Utils.findFileInClasspath(AbsSpark.STOCKS_FILE));
         System.out.println("~~file_count=" + file.count());
     }
 }

@@ -19,7 +19,7 @@ public class SimpleRead extends AbsSpark {
             System.out.println("QQ: Create context...");
             context = getJavaSparkContext(SimpleRead.class.getSimpleName());
             System.out.println("QQ: Read file...");
-            JavaRDD<String> rdd = context.textFile("/opt/rdd/PairRDDFunctions.txt");
+            JavaRDD<String> rdd = context.textFile(Utils.findFileInClasspath(PAIR_RDD_FUNCTIONS_TXT));
             List<String> list = rdd.collect();
             System.out.println("QQ: Calc total...");
             int total = 0;
